@@ -22,36 +22,36 @@
 				var FishTailHeight = FishBodyWidth/5;
 
 
-				class Fish {
-					// attributes
-					var FishBodyWidth = 100;
-					var FishBodyLength = 30;
-					var FishCenterX = 200;
-					var FishCenterY = 100;
-					var FishTailWidth = FishBodyLength/2;
-					var FishTailHeight = FishBodyWidth/5;
-
-				//fill(100, 200, 250);
-
-				void MoveFish(){
-					updateFish();
-					drawFish();
-				}
-				void updateFish(){
-					FishCenterX += 1
-				}
-
-				void DrawFish(){
-					fill(10,10,10);
-					triangle(FishCenterX - FishBodyLength/2, FishCenterY,
-						FishCenterX - FishBodyLength*2 - FishTailWidth,
-						FishCenterY - FishTailHeight,
-						FishCenterX - FishBodyLength*2 - FishTailWidth,
-						FishCenterY + FishTailHeight);
-					ellipse(FishCenterX, FishCenterY, FishBodyWidth, FishBodyLength);
-				}
-
-			}
+			// 	class Fish {
+			// 		// attributes
+			// 		var FishBodyWidth = 100;
+			// 		var FishBodyLength = 30;
+			// 		var FishCenterX = 200;
+			// 		var FishCenterY = 100;
+			// 		var FishTailWidth = FishBodyLength/2;
+			// 		var FishTailHeight = FishBodyWidth/5;
+			//
+			// 	//fill(100, 200, 250);
+			//
+			// 	void MoveFish(){
+			// 		updateFish();
+			// 		drawFish();
+			// 	}
+			// 	void updateFish(){
+			// 		FishCenterX += 1
+			// 	}
+			//
+			// 	void DrawFish(){
+			// 		fill(10,10,10);
+			// 		triangle(FishCenterX - FishBodyLength/2, FishCenterY,
+			// 			FishCenterX - FishBodyLength*2 - FishTailWidth,
+			// 			FishCenterY - FishTailHeight,
+			// 			FishCenterX - FishBodyLength*2 - FishTailWidth,
+			// 			FishCenterY + FishTailHeight);
+			// 		ellipse(FishCenterX, FishCenterY, FishBodyWidth, FishBodyLength);
+			// 	}
+			//
+			// }
 
 
 
@@ -70,9 +70,9 @@
 
           background(Background); //needed in the draw function to "clear" the screen between updates
 
-          //slowLine.moveLine();
+          slowLine.moveLine();
 
-          //fastLine.moveLine();
+          fastLine.moveLine();
 
 
 						//(MouseX, MouseY)
