@@ -10,6 +10,12 @@
 
         HorizontalLine fastLine = new HorizontalLine(50, 2.5);
 
+				VerticalLine slowVerticalLine = new VerticalLine(20 , 1.0);
+
+				VerticalLine fastVerticalLine = new VerticalLine(50 , 2.0);
+
+
+
         //since these are variables we don't want to ever change in the code, we capitalize them
         var WINDOW_WIDTH = 700;
         var WINDOW_HEIGHT = 400;
@@ -74,6 +80,10 @@
 
           fastLine.moveLine();
 
+					slowVerticalLine.moveVerticalLine();
+
+					fastVerticalLine.moveVerticalLine();
+
 
 						//(MouseX, MouseY)
 
@@ -84,6 +94,37 @@
         //attributes which describes the object
         //a constructor which sets the default values for the attributes
         //and functions which manipulate/give information about the attributes
+
+				class VerticalLine {
+					var xPos, speed;
+
+					VerticalLine (float x, float s){
+						xPos = x;
+
+						speed = s;
+
+					}
+
+					void moveVerticalLine() {
+						updateVerticalLine();
+						drawVerticalLine();
+
+					}
+
+					void updateVerticalLine(){
+						xPos += speed;
+
+						if (xPos > width){
+							xPos = 0;
+						}
+					}
+
+						void drawVerticalLine() {
+							line(xPos, height, xPos, 0);
+						}
+
+				}
+
         class HorizontalLine {
 
 		  //attributes
