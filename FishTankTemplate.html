@@ -14,6 +14,10 @@
 
 				VerticalLine fastVerticalLine = new VerticalLine(50 , 2.0);
 
+				Circle slowCircle = new Circle(20, 30, 1.0);
+
+				Circle fastCircle = new Circle(50, 40, 3.0);
+
 
 
         //since these are variables we don't want to ever change in the code, we capitalize them
@@ -84,6 +88,10 @@
 
 					fastVerticalLine.moveVerticalLine();
 
+					slowCircle.moveCircle();
+
+					fastCircle.moveCircle();
+
 
 						//(MouseX, MouseY)
 
@@ -94,6 +102,31 @@
         //attributes which describes the object
         //a constructor which sets the default values for the attributes
         //and functions which manipulate/give information about the attributes
+				class Circle {
+					var xCenter, yCenter, speed;
+
+					Circle (float x, float s){
+						xCenter = x;
+
+						speed = s;
+					}
+
+					void moveCircle() {
+						updateCircle();
+						drawCircle();
+					}
+					void updateCircle(){
+						xCenter += speed;
+
+						if (xCenter > width){
+							xCenter = 0;
+						}
+					}
+					void drawCircle() {
+						ellipse(xCenter, yCenter, 10, 10);
+				}
+			}
+
 
 				class VerticalLine {
 					var xPos, speed;
