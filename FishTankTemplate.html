@@ -6,21 +6,21 @@
         //Your code goes here
 
         // Declare and contruct two objects (slowLine, fastLine) from the class HorizontalLine
-        HorizontalLine slowLine = new HorizontalLine(20, 2.0);
+        HorizontalLine slowLine = new HorizontalLine(20, 1.0);
 
-        HorizontalLine fastLine = new HorizontalLine(50, 2.5);
+        HorizontalLine fastLine = new HorizontalLine(50, 1.25);
 
 				VerticalLine slowVerticalLine = new VerticalLine(20 , 1.0);
 
-				VerticalLine fastVerticalLine = new VerticalLine(50 , 2.0);
+				VerticalLine fastVerticalLine = new VerticalLine(50 , 1.25);
 
-				Circle slowCircle = new Circle(20, 50, 1.0);
+				Circle slowCircle = new Circle(20, random(20,380), 1.5);
 
-				Circle fastCircle = new Circle(30, 40, 3.0);
+				Circle fastCircle = new Circle(30, random(20,380), 2.0);
 
-				Triangle slowTriangle = new Triangle(30, 40, 1.0);
+				Triangle slowTriangle = new Triangle(30, random(20,380), 1.75);
 
-				Triangle fastTriangle = new Triangle(20, 50, 3.0);
+				Triangle fastTriangle = new Triangle(20, random(20,380), 2.1);
 
 
 
@@ -113,35 +113,46 @@
         //a constructor which sets the default values for the attributes
         //and functions which manipulate/give information about the attributes
 				class Circle {
-					var xCenter, yCenter, speed;
+					var xCenter, yCenter, speed, bodyColor;
 
-					Circle (float x, float s){
-						FishCenterX = x;
+					Circle (float x, float y, float s){
+						xCenter = x;
+
+						yCenter = y;
 
 						speed = s;
+
+						bodyColor = color(random(0,255),random(0,255),random(0,255));
+
+						tailColor = color(random(10, 200), random(10, 200), random(10, 200));
 					}
 
 
 					void updateCircle(){
-						FishCenterX += speed;
+						xCenter += speed;
 
-						if (FishCenterX > width){
-							FishCenterX = 0;
+						if (xCenter > width){
+							xCenter = 0;
 						}
 					}
 
 
 					void drawCircle() {
-						triangle(FishCenterX - 20, FishCenterY,
-							FishCenterX - 140, FishCenterY + 35,
-							FishCenterX - 140, FishCenterY - 35);
-						ellipse(FishCenterX, FishCenterY, 170, 90);
 
-						//fill(0);
-						ellipse(FishCenterX + 60, FishCenterY - 10, 10, 10);
+						fill(tailColor);
+						triangle(xCenter - 20, yCenter,
+							xCenter - 140, yCenter + 35,
+							xCenter - 140, yCenter - 35);
 
-						ellipse(FishCenterX + 63, FishCenterY - 10, 5, 5);
-						line(FishCenterX + 83, FishCenterY + 10, FishCenterX + 60, FishCenterY + 8);
+						fill(bodyColor);
+						ellipse(xCenter, yCenter, 170, 90);
+
+						fill(255, 255, 255);
+						ellipse(xCenter + 60, yCenter - 10, 10, 10);
+
+						fill(0);
+						ellipse(xCenter + 63, yCenter - 10, 5, 5);
+						line(xCenter + 83, yCenter + 10, xCenter + 60, yCenter+ 8);
 						}
 
 						void moveCircle() {
@@ -154,8 +165,12 @@
 			class Triangle {
 				var xCenter, yCenter, speed;
 
-				Triangle (float x, float s){
-					TwoFishCenterX = x;
+				Triangle (float x, float y, float s){
+					xCenter = x;
+
+					yCenter = y;
+
+					bodyColor = color(random(0,255),random(0,255),random(0,255));
 
 					speed = s;
 				}
@@ -166,18 +181,21 @@
 				}
 
 				void updateTriangle(){
-					TwoFishCenterX += speed;
+					xCenter += speed;
 
-					if (TwoFishCenterX > width){
-						TwoFishCenterX = 0;
+					if (xCenter > width){
+						xCenter = 0;
+
+						
 					}
 				}
 
 
 			void drawTriangle() {
-				triangle(TwoFishCenterX + 60, TwoFishCenterY,
-					TwoFishCenterX - 60, TwoFishCenterY - 50,
-				  TwoFishCenterX - 60, TwoFishCenterY + 50);
+				fill(bodyColor);
+				triangle(xCenter + 60, yCenter,
+					xCenter - 60, yCenter - 50,
+				  xCenter - 60, yCenter + 50);
 
 			}
 		}
