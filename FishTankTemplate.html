@@ -14,9 +14,13 @@
 
 				VerticalLine fastVerticalLine = new VerticalLine(50 , 2.0);
 
-				Circle slowCircle = new Circle(20, 30, 1.0);
+				Circle slowCircle = new Circle(20, 50, 1.0);
 
-				Circle fastCircle = new Circle(50, 40, 3.0);
+				Circle fastCircle = new Circle(30, 40, 3.0);
+
+				Triangle slowTriangle = new Triangle(30, 40, 1.0);
+
+				Triangle fastTriangle = new Triangle(20, 50, 3.0);
 
 
 
@@ -28,6 +32,8 @@
 				var FishBodyLength = 30;
 				var FishCenterX = 200;
 				var FishCenterY = 100;
+				var TwoFishCenterX = 350;
+				var TwoFishCenterY = 300;
 				var FishTailWidth = FishBodyLength/2;
 				var FishTailHeight = FishBodyWidth/5;
 
@@ -92,6 +98,10 @@
 
 					fastCircle.moveCircle();
 
+					slowTriangle.moveTriangle();
+
+					fastTriangle.moveTriangle();
+
 
 						//(MouseX, MouseY)
 
@@ -106,26 +116,71 @@
 					var xCenter, yCenter, speed;
 
 					Circle (float x, float s){
-						xCenter = x;
+						FishCenterX = x;
 
 						speed = s;
 					}
 
-					void moveCircle() {
-						updateCircle();
-						drawCircle();
-					}
-					void updateCircle(){
-						xCenter += speed;
 
-						if (xCenter > width){
-							xCenter = 0;
+					void updateCircle(){
+						FishCenterX += speed;
+
+						if (FishCenterX > width){
+							FishCenterX = 0;
 						}
 					}
+
+
 					void drawCircle() {
-						ellipse(xCenter, yCenter, 10, 10);
+						triangle(FishCenterX - 20, FishCenterY,
+							FishCenterX - 140, FishCenterY + 35,
+							FishCenterX - 140, FishCenterY - 35);
+						ellipse(FishCenterX, FishCenterY, 170, 90);
+
+						//fill(0);
+						ellipse(FishCenterX + 60, FishCenterY - 10, 10, 10);
+
+						ellipse(FishCenterX + 63, FishCenterY - 10, 5, 5);
+						line(FishCenterX + 83, FishCenterY + 10, FishCenterX + 60, FishCenterY + 8);
+						}
+
+						void moveCircle() {
+							updateCircle();
+							drawCircle();
+						}
 				}
+
+
+			class Triangle {
+				var xCenter, yCenter, speed;
+
+				Triangle (float x, float s){
+					TwoFishCenterX = x;
+
+					speed = s;
+				}
+
+				void moveTriangle() {
+					updateTriangle();
+					drawTriangle();
+				}
+
+				void updateTriangle(){
+					TwoFishCenterX += speed;
+
+					if (TwoFishCenterX > width){
+						TwoFishCenterX = 0;
+					}
+				}
+
+
+			void drawTriangle() {
+				triangle(TwoFishCenterX + 60, TwoFishCenterY,
+					TwoFishCenterX - 60, TwoFishCenterY - 50,
+				  TwoFishCenterX - 60, TwoFishCenterY + 50);
+
 			}
+		}
 
 
 				class VerticalLine {
