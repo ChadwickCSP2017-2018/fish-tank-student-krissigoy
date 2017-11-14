@@ -6,13 +6,13 @@
         //Your code goes here
 
         // Declare and contruct two objects (slowLine, fastLine) from the class HorizontalLine
-        HorizontalLine slowLine = new HorizontalLine(20, 1.0);
+        //HorizontalLine slowLine = new HorizontalLine(20, 1.0);
 
-        HorizontalLine fastLine = new HorizontalLine(50, 1.25);
+        //HorizontalLine fastLine = new HorizontalLine(50, 1.25);
 
-				VerticalLine slowVerticalLine = new VerticalLine(20 , 1.0);
+				//VerticalLine slowVerticalLine = new VerticalLine(20 , 1.0);
 
-				VerticalLine fastVerticalLine = new VerticalLine(50 , 1.25);
+				//VerticalLine fastVerticalLine = new VerticalLine(50 , 1.25);
 
 				Circle slowCircle = new Circle(20, random(30,520), 0.6);
 
@@ -86,13 +86,13 @@
 
           background(Background); //needed in the draw function to "clear" the screen between updates
 
-          slowLine.moveLine();
+          //slowLine.moveLine();
 
-          fastLine.moveLine();
+          //fastLine.moveLine();
 
-					slowVerticalLine.moveVerticalLine();
+					//slowVerticalLine.moveVerticalLine();
 
-					fastVerticalLine.moveVerticalLine();
+					//fastVerticalLine.moveVerticalLine();
 
 					slowCircle.moveCircle();
 
@@ -237,74 +237,74 @@
 		}
 
 
-				class VerticalLine {
-					var xPos, speed;
+				//class VerticalLine {
+				//	var xPos, speed;
 
-					VerticalLine (float x, float s){
-						xPos = x;
+				//	VerticalLine (float x, float s){
+				//		xPos = x;
 
-						speed = s;
+				//		speed = s;
 
-					}
+				//	}
 
-					void moveVerticalLine() {
-						updateVerticalLine();
-						drawVerticalLine();
+					//void moveVerticalLine() {
+				//		updateVerticalLine();
+					//	drawVerticalLine();
 
-					}
+				//	}
 
-					void updateVerticalLine(){
-						xPos += speed;
+				//	void updateVerticalLine(){
+					//	xPos += speed;
 
-						if (xPos > width){
-							xPos = 0;
-						}
-					}
+				//		if (xPos > width){
+					//		xPos = 0;
+				//		}
+			//		}
 
-						void drawVerticalLine() {
-							line(xPos, height, xPos, 0);
-						}
+					//	void drawVerticalLine() {
+					//		line(xPos, height, xPos, 0);
+				//		}
 
-				}
+			//	}
 
-        class HorizontalLine {
+    //    class HorizontalLine {
 
 		  //attributes
-          var yPos, speed; //float means they can be decimals
+      //    var yPos, speed; //float means they can be decimals
 
           //constructor
           //allows us to easily create different instances of our class
-          HorizontalLine (float y, float s) {
+        //  HorizontalLine (float y, float s) {
 
-            yPos = y;
+//            yPos = y;
 
-            speed = s;
+    //        speed = s;
 
-          }
+//          }
 
-          void moveLine() {
-          	updateLine();
-          	drawLine();
-          }
+  //        void moveLine() {
+    //      	updateLine();
+      //    	drawLine();
+        //  }
 
-          void updateLine() {
+      //    void updateLine() {
 
-            yPos += speed;
+        //    yPos += speed;
 
         	//height is a pre-defined variable that is the pixel value for the bottom of the screen
-            if (yPos > height) {
-              yPos = 0;
-            }
+      //      if (yPos > height) {
+        //      yPos = 0;
+        //    }
 
 
-          }
+      //    }
 
-          void drawLine() {
+        //  void drawLine() {
             //width is a pre-defined variable that is the pixel value for the right of the screen
-          	line(0, yPos, width, yPos);
-          }
+        //  	line(0, yPos, width, yPos);
+      //    }
 
-        }
+    //    }
         </script>
     </head>
 
