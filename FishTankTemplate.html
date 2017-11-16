@@ -10,9 +10,11 @@
 
         HorizontalLine fastLine = new HorizontalLine(50, 2.5);
 
+				BigFish = new BigFish(100,30);
+
         //since these are variables we don't want to ever change in the code, we capitalize them
-        var WINDOW_WIDTH = 700;
-        var WINDOW_HEIGHT = 400;
+        var WINDOW_WIDTH = 1000;
+        var WINDOW_HEIGHT = 600;
         var Background = color(173,216,230);
 				var FishBodyWidth = 100;
 				var FishBodyLength = 30;
@@ -20,44 +22,9 @@
 				var FishCenterY = 100;
 				var FishTailWidth = FishBodyLength/2;
 				var FishTailHeight = FishBodyWidth/5;
+				var Fishcolor = color(0,0,0);
 
-
-				class Fish {
-					// attributes
-					var FishBodyWidth = 100;
-					var FishBodyLength = 30;
-					var FishCenterX = 200;
-					var FishCenterY = 100;
-					var FishTailWidth = FishBodyLength/2;
-					var FishTailHeight = FishBodyWidth/5;
-
-				//fill(100, 200, 250);
-
-				void MoveFish(){
-					updateFish();
-					drawFish();
-				}
-				void updateFish(){
-					FishCenterX += 1
-				}
-
-				void DrawFish(){
-					fill(10,10,10);
-					triangle(FishCenterX - FishBodyLength/2, FishCenterY,
-						FishCenterX - FishBodyLength*2 - FishTailWidth,
-						FishCenterY - FishTailHeight,
-						FishCenterX - FishBodyLength*2 - FishTailWidth,
-						FishCenterY + FishTailHeight);
-					ellipse(FishCenterX, FishCenterY, FishBodyWidth, FishBodyLength);
-				}
-
-			}
-
-
-
-					//FishCenterX = FishCenterX - 2
-        //This function only runs once at the start of the program
-        void setup() {
+				void setup() {
           size(WINDOW_WIDTH, WINDOW_HEIGHT); //sets the size of the window
 
           frameRate(1000); //how many times the draw function is called per second
@@ -65,10 +32,56 @@
         }
 
 
+
+				class BigFish {
+
+					// attributes
+					var FishBodyWidth, FishBodyLength;
+
+					BigFish(FishBodyWidth,FishBodyLength);
+
+					var FishCenterX = 200;
+					var FishCenterY = 100;
+					var FishTailWidth = FishBodyLength/2;
+					var FishTailHeight = FishBodyWidth/5;
+				}
+
+				//fill(100, 200, 250);
+
+				void MoveFish(){
+					updateBigFish();
+					drawFish();
+				}
+
+				void updateFish(){
+					FishCenterX += 1;
+				}
+
+
+
+
+
+
+
+					//FishCenterX = FishCenterX - 2
+        //This function only runs once at the start of the program
+
+
+
+
+
         //called repeatedly
         void draw() {
 
-          background(Background); //needed in the draw function to "clear" the screen between updates
+          background(Background);
+					fill(Fishcolor);
+					triangle(FishCenterX - FishBodyLength/2, FishCenterY,
+						FishCenterX - FishBodyLength*2 - FishTailWidth,
+						FishCenterY - FishTailHeight,
+						FishCenterX - FishBodyLength*2 - FishTailWidth,
+						FishCenterY + FishTailHeight);
+					ellipse(FishCenterX, FishCenterY, FishBodyWidth, FishBodyLength);
+					//needed in the draw function to "clear" the screen between updates
 
           //slowLine.moveLine();
 
