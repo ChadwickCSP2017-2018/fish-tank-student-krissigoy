@@ -14,21 +14,15 @@
 
 				//VerticalLine fastVerticalLine = new VerticalLine(50 , 1.25);
 
-<<<<<<< HEAD
 				Fish slowFish = new Fish(20, random(30,520), 0.6);
 
 				Fish fastFish = new Fish(30, random(30,520), 1.5);
-=======
-				Circle slowCircle = new Circle(20, random(30,520), 0.6);
-
-				Circle fastCircle = new Circle(30, random(30,520), 1.5);
->>>>>>> bf7a95fe7e4c2718ca5ce755bd560d768ed8d3ce
 
 				Triangle slowTriangle = new Triangle(30, random(30,520), 0.75);
 
 				Triangle fastTriangle = new Triangle(20, random(20,380), 0.5);
 
-				Catfish fastCatfish = new Catfish(20, random(40,400),1.25);
+				Narwal fastNarwal = new Narwal(20, random(40,400),1.25);
 
 
         //since these are variables we don't want to ever change in the code, we capitalize them
@@ -117,11 +111,8 @@
 					//slowVerticalLine.moveVerticalLine();
 
 					//fastVerticalLine.moveVerticalLine();
-<<<<<<< HEAD
-=======
 
 					stroke(0);
->>>>>>> bf7a95fe7e4c2718ca5ce755bd560d768ed8d3ce
 
 					slowFish.moveFish();
 
@@ -131,7 +122,7 @@
 
 					fastTriangle.moveTriangle();
 
-					fastCatfish.moveCatfish();
+					fastNarwal.moveNarwal();
 
 
 						//(MouseX, MouseY)
@@ -143,11 +134,7 @@
         //attributes which describes the object
         //a constructor which sets the default values for the attributes
         //and functions which manipulate/give information about the attributes
-<<<<<<< HEAD
 				class Fish {
-=======
-				class Circle {
->>>>>>> bf7a95fe7e4c2718ca5ce755bd560d768ed8d3ce
 					var xCenter, yCenter, speed, bodyColor, tailColor;
 
 					Fish (float x, float y, float s){
@@ -234,15 +221,9 @@
 
 					if (xCenter -120 > width){
 						xCenter = -70;
-<<<<<<< HEAD
 
 						bodyColor = color(random(0,255),random(0,255),random(0,255));
 
-=======
-
-						bodyColor = color(random(0,255),random(0,255),random(0,255));
-
->>>>>>> bf7a95fe7e4c2718ca5ce755bd560d768ed8d3ce
 						tailColor = color(random(0, 255), random(0,255), random(0,255));
 
 						yCenter = random(30,520);
@@ -277,42 +258,10 @@
 			}
 		}
 
-		class Catfish{
+		class Narwal{
 			var xCenter, yCenter, speed, bodyColor, tailColor;
 
-<<<<<<< HEAD
-				//class VerticalLine {
-				//	var xPos, speed;
-
-				//	VerticalLine (float x, float s){
-				//		xPos = x;
-
-				//		speed = s;
-
-				//	}
-
-					//void moveVerticalLine() {
-				//		updateVerticalLine();
-					//	drawVerticalLine();
-
-				//	}
-
-				//	void updateVerticalLine(){
-					//	xPos += speed;
-
-				//		if (xPos > width){
-					//		xPos = 0;
-				//		}
-			//		}
-
-					//	void drawVerticalLine() {
-					//		line(xPos, height, xPos, 0);
-				//		}
-
-			//	}
-
-=======
-			Catfish (float x, float y, float s){
+			Narwal (float x, float y, float s){
 				xCenter = x;
 
 				yCenter = y;
@@ -325,7 +274,7 @@
 
 			}
 
-			void updateCatfish(){
+			void updateNarwal(){
 				xCenter -= speed;
 
 				if (xCenter + 100 < 0){
@@ -339,12 +288,12 @@
 				}
 			}
 
-			void moveCatfish(){
-				updateCatfish();
-				drawCatfish();
+			void moveNarwal(){
+				updateNarwal();
+				drawNarwal();
 			}
 
-			void drawCatfish(){
+			void drawNarwal(){
 				//tail
 				fill(tailColor);
 				triangle(
@@ -361,7 +310,7 @@
 				triangle(
 					xCenter - 70, yCenter - 20,
 					xCenter - 110, yCenter - 30,
-					xCenter - 70, yCenter - 10);
+					xCenter - 80, yCenter - 10);
 
 				//eyeball
 					fill(255, 255, 255);
@@ -404,7 +353,6 @@
 
 			//	}
 
->>>>>>> bf7a95fe7e4c2718ca5ce755bd560d768ed8d3ce
     //    class HorizontalLine {
 
 		  //attributes
